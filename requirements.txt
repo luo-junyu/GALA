@@ -1,0 +1,6 @@
+ml-collections
+absl-py
+pandas
+matplotlib
+tensorboard
+torchdiffeq
