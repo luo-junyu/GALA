@@ -2,7 +2,7 @@
 
 ## TLDR
 
-GALA, for the first time, investigate source-free graph-level domain adaptation. GALA address this question from a data-centric perspective, utilizing graph diffusion models and jigsaw techniques to align domains and enhance generalization without the access of source data.
+GALA, for the first time, investigate source-free graph-level domain adaptation. GALA address this question from a data-centric perspective, utilizing graph diffusion models and jigsaw techniques to align domains and enhance generalization without the access of source data. [Paper](https://ieeexplore.ieee.org/document/10561561), [Arxiv](https://arxiv.org/abs/2410.16606), [PDF](https://sourcefreegraphdomainadaptation.github.io/static/images/GALA_TPAMI24.pdf)
 
 
 ## BibTex
@@ -47,7 +47,50 @@ python3 main.py --DS FRANKENSTEIN --data_split 4 --source_index 0 --target_index
 > ```
 
 
+## Installation
 
+### Requirements
+```bash
+python >= 3.8
+pytorch >= 1.8.0
+torch-geometric >= 2.0.0
+numpy
+scipy
+scikit-learn
+tqdm
+```
+
+To install the required packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Datasets
+
+The experiments were conducted on several graph classification datasets with different density distributions:
+
+- FRANKENSTEIN
+- ENZYMES
+- PROTEINS
+- DD
+- NCI1
+
+### Dataset Preparation
+1. The datasets will be automatically downloaded when running the code for the first time
+2. They will be stored in `data/` directory
+3. The density-based splitting is handled automatically by the data loader
+
+## Project Structure
+```
+.
+├── configs/           # Configuration files for different datasets
+├── data/             # Dataset storage
+├── diffusion/        # Graph diffusion model implementation
+├── figs/             # Figures and visualizations
+├── models/           # Model architectures
+├── utils/            # Utility functions
+└── main.py           # Main training script
+```
 
 ## Acknowledgement
 
